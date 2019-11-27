@@ -31,7 +31,7 @@ $(function() {
         _gaq.push(['_trackEvent', 'Mock', 'create', 'mock requested', , false]);
         $("#send-btn").text(I18n("btn.wait")).attr("disabled", "disabled")
         var body = $(this).serializeArray().concat({name: "body", value: editor.getSession().getValue()})
-        $.post("/", body)
+        $.post("/mocky", body)
             .done(function(data) {
                 _gaq.push(['_trackEvent', 'Mock', 'success', 'mock created with success', , false]);
                 $("#feedback p").html('<strong>'+I18n("alert.linkReady")+'</strong> <a href="'+data.url+'" target="blank">'+data.url+'</a>')
